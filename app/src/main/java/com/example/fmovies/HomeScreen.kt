@@ -121,8 +121,6 @@ fun MovieRow(
                 modifier
                     .size(100.dp)
                     .align(Alignment.CenterVertically),
-
-
                 )
             Box(
                 modifier

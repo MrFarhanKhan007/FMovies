@@ -1,6 +1,8 @@
 package com.example.fmovies
 
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
@@ -11,10 +13,15 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.LineBreak
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
@@ -38,7 +45,7 @@ fun MyAppDetails(
                 },
                 navigationIcon = {
                     Icon(
-                        imageVector = Icons.Filled.ArrowBack,
+                        imageVector = Icons.Default.ArrowBack,
                         contentDescription = "Back Button",
                         modifier.clickable {
                             navController.popBackStack()
@@ -50,17 +57,26 @@ fun MyAppDetails(
         },
     )
     { paddingValues ->
-        Text(
-            text = "$movieData",
-            modifier.padding(paddingValues),
-            fontSize = 50.sp,
-            fontWeight = FontWeight.ExtraBold
-        )
+        paddingValues.calculateTopPadding()
+        Box(
+            modifier
+                .fillMaxSize()
+                .padding(10.dp),
+            contentAlignment = Alignment.Center
+        ) {
+            Text(
+                text = movieData ?: "",
+                fontSize = 50.sp,
+                textAlign = TextAlign.Center,
+                fontWeight = FontWeight.ExtraBold,
+                style = TextStyle(lineBreak = LineBreak.Simple)
+            )
+        }
     }
 }
 
 @Preview(showBackground = true)
 @Composable
 fun DetailScreenPreview() {
-    MyAppDetails(movieData = "Ted", navController = rememberNavController())
+    MyAppDetails(movieData = "Dumb and Dumber", navController = rememberNavController())
 }
