@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">FMovies</string>
+    <string name="TopAppBar">Movies</string>
 </resources>
