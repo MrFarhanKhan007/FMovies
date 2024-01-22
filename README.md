@@ -10,7 +10,7 @@
 
 ## Screenshots 📸
 <!-- Add your captivating screenshots here to showcase the stunning UI of your FMovies app. -->
-![alt text](https://drive.google.com/file/d/1bxL-vC0PZ7mqQjs-N6dr5Il-r7xOc56S/view?usp=drive_link)
+![Screenshot](IMG_20240122_145839.jpg)
 ### Getting Started 🚀
 Follow these simple steps to get FMovies up and running on your local machine.
 
