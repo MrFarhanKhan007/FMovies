@@ -10,6 +10,7 @@
 
 ## Screenshots 📸
 <!-- Add your captivating screenshots here to showcase the stunning UI of your FMovies app. -->
+![alt text](https://drive.google.com/file/d/1bxL-vC0PZ7mqQjs-N6dr5Il-r7xOc56S/view?usp=drive_link)
 ### Getting Started 🚀
 Follow these simple steps to get FMovies up and running on your local machine.
 
@@ -35,3 +36,9 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 A big shoutout to the Kotlin Jetpack Compose team for providing an amazing toolkit for modern Android UI development.
 
 Enjoy your movie journey with FMovies! 🍿🎉
+
+## Sample Video-
+
+
+https://github.com/MrFarhanKhan007/FMovies/assets/96666465/e32ef0d1-21e4-44b1-bb37-6f4ef5ccc608
+
