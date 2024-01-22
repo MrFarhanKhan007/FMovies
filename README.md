@@ -11,10 +11,10 @@
 ## Screenshots 📸
 <!-- Add your captivating screenshots here to showcase the stunning UI of your FMovies app. -->
 ![Screenshot](IMG_20240122_145839.jpg)
-### Getting Started 🚀
+## Getting Started 🚀
 Follow these simple steps to get FMovies up and running on your local machine.
 
-### Clone the repository:
+## Clone the repository:
 
 bash
 
