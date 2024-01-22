@@ -59,21 +59,23 @@ fun MyApp(
                 title = {
                     Text(
                         text = stringResource(R.string.app_name),
-                        color = Color.White,
-                        fontFamily = FontFamily.Serif,
+                        color = Color.Black,
+                        fontFamily = FontFamily.SansSerif,
                         fontSize = 25.sp,
                         fontWeight = FontWeight.ExtraBold
                     )
                 },
-                colors = TopAppBarDefaults.topAppBarColors(Color(0xFFD11515)),
+                colors = TopAppBarDefaults.topAppBarColors(Color(0xFFE53935)),
             )
-        }
+        },
+        modifier = Modifier.fillMaxSize(),
+        containerColor = Color(0xF5252525)
     )
     { paddingValues ->
         LazyColumn(modifier.padding(paddingValues)) {
             items(items = movieList) {
                 MovieRow(movie = it) { movie ->
-                    navController.navigate(route = MovieScreens.DETAILS_SCREEN.name + "/$movie")
+                    navController.navigate(route = MovieScreens.DETAILS_SCREEN.name + "/movieId=${movie}")
                 }
             }
         }
@@ -95,7 +97,7 @@ fun MovieRow(
                 onClick(movie.imdbID)
             },
         shape = RoundedCornerShape(corner = CornerSize(10.dp)),
-        colors = CardDefaults.cardColors(Color(0xFFEC3535)),
+        colors = CardDefaults.cardColors(Color.Black),
         elevation = CardDefaults.cardElevation(5.dp)
     ) {
         Row(
@@ -121,28 +123,28 @@ fun MovieRow(
 
                 Text(
                     text = movie.title,
-                    fontSize = 18.sp,
-                    color = Color.White,
+                    fontSize = 20.sp,
+                    color = Color(0xFFE53935),
                     fontWeight = FontWeight.ExtraBold,
-                    fontFamily = FontFamily.Serif
+                    fontFamily = FontFamily.Default
                 )
-
+                Spacer(modifier.height(5.dp))
                 Text(
                     text = "Directed By: ${movie.director}",
-                    color = Color.White,
-                    fontSize = 13.sp,
+                    color = Color(0xFFE53935),
+                    fontSize = 15.sp,
                     lineHeight = 20.sp,
                     fontWeight = FontWeight.Normal,
-                    fontFamily = FontFamily.Serif
+                    fontFamily = FontFamily.Default
                 )
 
                 Text(
                     text = "Released: ${movie.released}",
-                    color = Color.White,
-                    fontSize = 13.sp,
+                    color = Color(0xFFE53935),
+                    fontSize = 15.sp,
                     lineHeight = 20.sp,
                     fontWeight = FontWeight.Normal,
-                    fontFamily = FontFamily.Serif
+                    fontFamily = FontFamily.Default
                 )
             }
         }

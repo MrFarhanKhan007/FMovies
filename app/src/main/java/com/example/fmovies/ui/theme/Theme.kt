@@ -25,7 +25,8 @@ private val DarkColorScheme = darkColorScheme(
 private val LightColorScheme = lightColorScheme(
     primary = Purple40,
     secondary = PurpleGrey40,
-    tertiary = Pink40
+    tertiary = Pink40,
+    background = Color.Black
 
     /* Other default colors to override
     background = Color(0xFFFFFBFE),
@@ -58,7 +59,7 @@ fun FMoviesTheme(
     if (!view.isInEditMode) {
         SideEffect {
             val window = (view.context as Activity).window
-            window.statusBarColor = Color(0xFFD11515).toArgb()
+            window.statusBarColor = Color(0xFFE53935).toArgb()
             window.navigationBarColor = Color.Black.toArgb()
             WindowCompat.getInsetsController(window, view).isAppearanceLightStatusBars = darkTheme
         }

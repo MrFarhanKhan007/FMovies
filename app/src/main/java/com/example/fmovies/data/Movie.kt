@@ -44,7 +44,7 @@ fun getMovies(): List<Movie> {
             "17 Apr 2011",
             "56 min",
             "Adventure, Drama, Fantasy",
-            "David Benioff, D.B. Weiss",
+            "David Benioff",
             "Peter Dinklage, Lena Headey, Emilia Clarke, Kit Harington",
             "While a civil war brews between several noble families in Westeros, the children of the former rulers of the land attempt to rise up to power. Meanwhile, a forgotten race, bent on destruction, plans to return after thousands of years in the North.",
             "9.5",
@@ -212,7 +212,7 @@ fun getMovies(): List<Movie> {
             "28 Aug 2015",
             "49 min",
             "Biography, Crime, Drama",
-            "Carlo Bernard, Chris Brancato, Doug Miro, Paul Eckstein",
+            "Carlo Bernard",
             "Wagner Moura, Boyd Holbrook, Pedro Pascal, Joanna Christie",
             "A chronicled look at the criminal exploits of Colombian drug lord Pablo Escobar.",
 
@@ -309,27 +309,7 @@ fun getMovies(): List<Movie> {
                 "https://images-na.ssl-images-amazon.com/images/M/MV5BZjA0MWYwZTEtYzc5Yi00NGM2LTg1YTctNjY2YzQ0NDJhZDAwXkEyXkFqcGdeQXVyNDAyODU1Njc@._V1_SY1000_CR0,0,1499,1000_AL_.jpg"
             )
         ),
-        Movie(
-            "Luke Cage",
-            "2016–",
-            "TV-MA",
-            "30 Sep 2016",
-            "55 min",
-            "Action, Crime, Drama",
-            "N/A",
-            "Cheo Hodari Coker",
-            "Given superstrength and durability by a sabotaged experiment, a wrongly accused man escapes prison to become a superhero for hire.",
-            imdbRating = "N/A",
-            imdbID = "tt3322314",
-            listOf(
-                "https://images-na.ssl-images-amazon.com/images/M/MV5BMjMxNjc1NjI0NV5BMl5BanBnXkFtZTgwNzA0NzY0ODE@._V1_SY1000_CR0,0,1497,1000_AL_.jpg",
-                "https://images-na.ssl-images-amazon.com/images/M/MV5BMjI1MDg3NjY2OF5BMl5BanBnXkFtZTgwNDE1NDU4OTE@._V1_SY1000_CR0,0,1497,1000_AL_.jpg",
-                "https://images-na.ssl-images-amazon.com/images/M/MV5BOTYzOTQyNDYxNl5BMl5BanBnXkFtZTgwNzA1NDU4OTE@._V1_SY1000_CR0,0,1498,1000_AL_.jpg",
-                "https://images-na.ssl-images-amazon.com/images/M/MV5BMTgxMjA3MTQ5Ml5BMl5BanBnXkFtZTgwOTA1NDU4OTE@._V1_SY1000_CR0,0,1498,1000_AL_.jpg",
-                "https://images-na.ssl-images-amazon.com/images/M/MV5BMjMyNjg5ODYwNF5BMl5BanBnXkFtZTgwMTE1NDU4OTE@._V1_SY1000_CR0,0,1477,1000_AL_.jpg"
 
-            )
-        )
     )
 }
 
