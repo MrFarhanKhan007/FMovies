@@ -1,6 +1,7 @@
 package com.example.fmovies
 
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -26,7 +27,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontFamily
@@ -40,6 +40,10 @@ import coil.compose.AsyncImage
 import com.example.fmovies.data.Movie
 import com.example.fmovies.data.getMovies
 import com.example.fmovies.navigation.MovieScreens
+import com.example.fmovies.ui.theme.md_theme_dark_primaryContainer
+import com.example.fmovies.ui.theme.md_theme_light_background
+import com.example.fmovies.ui.theme.md_theme_light_primary
+import com.example.fmovies.ui.theme.md_theme_light_primaryContainer
 
 @Composable
 fun HomeScreen(navController: NavController) {
@@ -59,17 +63,16 @@ fun MyApp(
                 title = {
                     Text(
                         text = stringResource(R.string.app_name),
-                        color = Color.Black,
                         fontFamily = FontFamily.SansSerif,
                         fontSize = 25.sp,
+                        color = md_theme_light_background,
                         fontWeight = FontWeight.ExtraBold
                     )
                 },
-                colors = TopAppBarDefaults.topAppBarColors(Color(0xFFE53935)),
+                colors = TopAppBarDefaults.topAppBarColors(md_theme_light_primary)
             )
         },
         modifier = Modifier.fillMaxSize(),
-        containerColor = Color(0xF5252525)
     )
     { paddingValues ->
         LazyColumn(modifier.padding(paddingValues)) {
@@ -88,6 +91,11 @@ fun MovieRow(
     movie: Movie,
     onClick: (String) -> Unit
 ) {
+    val colorChoice = if (isSystemInDarkTheme()) {
+        md_theme_dark_primaryContainer
+    } else {
+        md_theme_light_primaryContainer
+    }
     Card(
         modifier
             .padding(start = 20.dp, top = 15.dp, bottom = 10.dp, end = 20.dp)
@@ -96,8 +104,8 @@ fun MovieRow(
             .clickable {
                 onClick(movie.imdbID)
             },
+        colors = CardDefaults.cardColors(colorChoice),
         shape = RoundedCornerShape(corner = CornerSize(10.dp)),
-        colors = CardDefaults.cardColors(Color.Black),
         elevation = CardDefaults.cardElevation(5.dp)
     ) {
         Row(
@@ -124,14 +132,12 @@ fun MovieRow(
                 Text(
                     text = movie.title,
                     fontSize = 20.sp,
-                    color = Color(0xFFE53935),
                     fontWeight = FontWeight.ExtraBold,
                     fontFamily = FontFamily.Default
                 )
                 Spacer(modifier.height(5.dp))
                 Text(
                     text = "Directed By: ${movie.director}",
-                    color = Color(0xFFE53935),
                     fontSize = 15.sp,
                     lineHeight = 20.sp,
                     fontWeight = FontWeight.Normal,
@@ -140,7 +146,6 @@ fun MovieRow(
 
                 Text(
                     text = "Released: ${movie.released}",
-                    color = Color(0xFFE53935),
                     fontSize = 15.sp,
                     lineHeight = 20.sp,
                     fontWeight = FontWeight.Normal,

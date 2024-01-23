@@ -37,6 +37,8 @@ import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import coil.compose.AsyncImage
 import com.example.fmovies.data.getMovies
+import com.example.fmovies.ui.theme.md_theme_light_onBackground
+import com.example.fmovies.ui.theme.md_theme_light_primary
 
 @Composable
 fun DetailScreen(
@@ -100,14 +102,14 @@ fun MyAppDetails(
                         contentDescription = "Back Button",
                         modifier.clickable {
                             navController.popBackStack()
-                        }
+                        },
+                        tint = md_theme_light_onBackground
                     )
                 },
-                colors = TopAppBarDefaults.topAppBarColors(Color(0xFFE53935)),
+                colors = TopAppBarDefaults.topAppBarColors(md_theme_light_primary),
             )
         },
         modifier = Modifier.fillMaxSize(),
-        containerColor = Color(0xF5252525)
     )
     { paddingValues ->
         paddingValues.calculateTopPadding()
@@ -170,7 +172,6 @@ private fun MovieInfo(
                         "IMDb ID: $imdbID",
                 modifier.padding(10.dp),
                 style = TextStyle(
-                    color = Color.White,
                     fontSize = 20.sp,
                     lineHeight = 30.sp,
                     textAlign = TextAlign.Left,
@@ -215,14 +216,12 @@ private fun MovieDetailsRow(
                     fontSize = 25.sp,
                     fontFamily = FontFamily.Default,
                     fontWeight = FontWeight.ExtraBold,
-                    color = Color.White
                 )
             )
             Spacer(modifier.height(10.dp))
             Text(
                 text = "Directed By: $director",
                 style = TextStyle(
-                    color = Color.White,
                     fontFamily = FontFamily.Default,
                     fontWeight = FontWeight.Normal
                 )
@@ -230,7 +229,6 @@ private fun MovieDetailsRow(
             Text(
                 text = "Genre: $genre",
                 style = TextStyle(
-                    color = Color.White,
                     fontFamily = FontFamily.Default,
                     fontWeight = FontWeight.Normal
                 )
@@ -238,7 +236,6 @@ private fun MovieDetailsRow(
             Text(
                 text = "Runtime: $runtime",
                 style = TextStyle(
-                    color = Color.White,
                     fontFamily = FontFamily.Serif,
                     fontWeight = FontWeight.Normal
                 )
