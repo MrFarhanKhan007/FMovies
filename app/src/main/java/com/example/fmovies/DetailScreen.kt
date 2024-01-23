@@ -26,10 +26,13 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -158,24 +161,177 @@ private fun MovieInfo(
         items(1) {
 
             Text(
-                text =
-                "Title: $title \n" +
-                        "Year: $year\n" +
-                        "Rated: $rated \n" +
-                        "Released: $released\n" +
-                        "Runtime: $runtime\n" +
-                        "Genre: $genre\n" +
-                        "Director: $director\n" +
-                        "Actors: $actors\n" +
-                        "Plot: $plot\n" +
-                        "IMDb Rating: $imdbRating\n" +
-                        "IMDb ID: $imdbID",
+                buildAnnotatedString {
+                    withStyle(
+                        style = SpanStyle(fontSize = 20.sp, fontWeight = FontWeight.SemiBold)
+                    ) {
+                        append(text = "Title\n")
+                    }
+                    withStyle(
+                        style = SpanStyle(fontSize = 17.sp, fontWeight = FontWeight.Normal),
+                    ) {
+                        append(text = title + "\n")
+                    }
+
+                    /////////////////////////////////////////////
+
+                    withStyle(
+                        style = SpanStyle(fontSize = 20.sp, fontWeight = FontWeight.SemiBold)
+                    ) {
+                        append(text = "Year\n")
+                    }
+                    withStyle(
+                        style = SpanStyle(fontSize = 17.sp, fontWeight = FontWeight.Normal),
+                    ) {
+                        append(text = year + "\n")
+                    }
+
+                    /////////////////////////////////////////////
+
+                    withStyle(
+                        style = SpanStyle(fontSize = 20.sp)
+                    ) {
+                        append(text = "Rated \n")
+                    }
+
+                    withStyle(
+                        style = SpanStyle(fontSize = 17.sp, fontWeight = FontWeight.Normal),
+                    ) {
+                        append(text = rated + "\n")
+                    }
+
+                    /////////////////////////////////////////////
+
+                    withStyle(
+                        style = SpanStyle(fontSize = 20.sp)
+                    ) {
+                        append(text = "Released \n")
+                    }
+
+                    withStyle(
+                        style = SpanStyle(fontSize = 17.sp, fontWeight = FontWeight.Normal),
+                    ) {
+                        append(text = released + "\n")
+                    }
+
+                    //////////////////////////////////////
+
+
+                    withStyle(
+                        style = SpanStyle(fontSize = 20.sp)
+                    ) {
+                        append(text = "Runtime \n")
+                    }
+
+                    withStyle(
+                        style = SpanStyle(fontSize = 17.sp, fontWeight = FontWeight.Normal),
+                    ) {
+                        append(text = runtime + "\n")
+                    }
+
+                    /////////////////////////////////////////////
+
+                    withStyle(
+                        style = SpanStyle(fontSize = 20.sp)
+                    ) {
+                        append(text = "Genre \n")
+                    }
+
+                    withStyle(
+                        style = SpanStyle(fontSize = 17.sp, fontWeight = FontWeight.Normal),
+                    ) {
+                        append(text = genre + "\n")
+                    }
+
+                    /////////////////////////////////////////////
+
+                    withStyle(
+                        style = SpanStyle(fontSize = 20.sp)
+                    ) {
+                        append(text = "Director \n")
+                    }
+
+                    withStyle(
+                        style = SpanStyle(fontSize = 17.sp, fontWeight = FontWeight.Normal),
+                    ) {
+                        append(text = director + "\n")
+                    }
+
+                    /////////////////////////////////////////////
+
+                    withStyle(
+                        style = SpanStyle(fontSize = 20.sp)
+                    ) {
+                        append(text = "Actors \n")
+                    }
+
+                    withStyle(
+                        style = SpanStyle(fontSize = 17.sp, fontWeight = FontWeight.Normal),
+                    ) {
+                        append(text = actors + "\n")
+                    }
+
+                    /////////////////////////////////////////////
+
+                    withStyle(
+                        style = SpanStyle(fontSize = 20.sp)
+                    ) {
+                        append(text = "Plot \n")
+                    }
+
+                    withStyle(
+                        style = SpanStyle(fontSize = 17.sp, fontWeight = FontWeight.Normal),
+                    ) {
+                        append(text = plot + "\n")
+                    }
+
+                    //////////////////////////////////////////////////
+
+                    withStyle(
+                        style = SpanStyle(fontSize = 20.sp)
+                    ) {
+                        append(text = "IMDb Rating \n")
+                    }
+
+                    withStyle(
+                        style = SpanStyle(fontSize = 17.sp, fontWeight = FontWeight.Normal),
+                    ) {
+                        append(text = imdbRating + "\n")
+                    }
+
+                    /////////////////////////////////////////////
+
+                    withStyle(
+                        style = SpanStyle(fontSize = 20.sp)
+                    ) {
+                        append(text = "IMDb ID ")
+                    }
+
+                    withStyle(
+                        style = SpanStyle(fontSize = 17.sp, fontWeight = FontWeight.Normal),
+                    ) {
+                        append(text = imdbID + "\n")
+                    }
+
+
+                },
+//                "Title: $title \n" +
+//                        "Year: $year\n" +
+//                        "Rated: $rated \n" +
+//                        "Released: $released\n" +
+//                        "Runtime: $runtime\n" +
+//                        "Genre: $genre\n" +
+//                        "Director: $director\n" +
+//                        "Actors: $actors\n" +
+//                        "Plot: $plot\n" +
+//                        "IMDb Rating: $imdbRating\n" +
+//                        "IMDb ID: $imdbID",
                 modifier.padding(10.dp),
                 style = TextStyle(
                     fontSize = 20.sp,
-                    lineHeight = 30.sp,
+                    lineHeight = 25.sp,
                     textAlign = TextAlign.Left,
-                    fontWeight = FontWeight.SemiBold
+                    fontWeight = FontWeight.SemiBold,
                 )
             )
         }
